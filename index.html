@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Savage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #1a1a1a, #000000);
+            color: white;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #33333300;
+            color: white;
+        }
+        .button {
+            background-color: #555;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 5px;
+        }
+        .button:hover {
+            background-color: #c94117;
+        }
+        .game-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+        .game-item {
+            text-align: center;
+            margin-bottom: 40px;
+            perspective: 1000px;
+        }
+        .game-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            will-change: transform;
+        }
+        .game-image:hover {
+            transform: scale(1.1);
+        }
+        .game-info {
+            margin-top: 20px;
+            max-width: 800px;
+            text-align: center;
+        }
+        .game-info h1 {
+            color: white;
+        }
+        .game-info p {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1 id="header-title">Welcome to the World of The Savage</h1>
+        <p id="header-subtitle">Your epic adventure begins here!</p>
+        <button class="button" id="language-button" onclick="toggleLanguage()">เปลี่ยนเป็นภาษาไทย</button>
+    </div>
+
+    <div class="game-container">
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures/blob/main/Dungeons1.png?raw=true" alt="Dungeons" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)">
+            <p id="game-desc-1">Explore the dungeons and find rare treasures.</p>
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures/blob/main/Boss.png?raw=true" alt="??? " onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)">
+            <p id="game-desc-2">Fight powerful bosses with your friends.</p>
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures/blob/main/Darkness1.png?raw=true" alt="Darkness" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)">
+            <p id="game-desc-3">Explore a vast open world filled with wonders.</p>
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures/blob/main/Graphic1.png?raw=true" alt="Graphic" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)">
+            <p id="game-desc-4">Challenge yourself in difficult and dungeons.</p>
+        </div>
+
+        <div class="game-info">
+            <h1 id="game-title">The Savage</h1>
+            <p id="game-info-1">Explore vast lands, fight fierce enemies, Play the game that everyone is talking about and join the community of adventurers worldwide!</p>
+            <button onclick="window.location.href='https://www.roblox.com/games/109469099778156'" style="padding: 10px 20px; background-color: #555; color: white; border: none; border-radius: 5px; cursor: pointer;">Play Now</button>
+        </div>
+    </div>
+
+    <script>
+        var language = "en";
+
+        function toggleLanguage() {
+            if (language === "en") {
+                document.getElementById("header-title").textContent = "ยินดีต้อนรับสู่โลกของ The Savage";
+                document.getElementById("header-subtitle").textContent = "การผจญภัยครั้งยิ่งใหญ่ของคุณเริ่มต้นที่นี่!";
+                document.getElementById("game-desc-1").textContent = "สำรวจดันเจี้ยนและค้นหาสมบัติล้ำค่า";
+                document.getElementById("game-desc-2").textContent = "ต่อสู้กับบอสที่แข็งแกร่งร่วมกับเพื่อนของคุณ";
+                document.getElementById("game-desc-3").textContent = "สำรวจโลกกว้างใหญ่ที่เต็มไปด้วยสิ่งน่าพิศวง";
+                document.getElementById("game-desc-4").textContent = "ท้าทายตัวเองในการบุกดันเจี้ยนที่ยากลำบาก";
+                document.getElementById("game-title").textContent = "The Savage";
+                document.getElementById("game-info-1").textContent = "สำรวจดินแดนอันกว้างใหญ่ ต่อสู้กับศัตรูที่ดุร้าย เล่นเกมที่ทุกคนพูดถึงและเข้าร่วมชุมชนของนักผจญภัยทั่วโลก!";
+                document.getElementById("language-button").textContent = "Change to English";
+                language = "th";
+            } else {
+                document.getElementById("header-title").textContent = "Welcome to the World of The Savage";
+                document.getElementById("header-subtitle").textContent = "Your epic adventure begins here!";
+                document.getElementById("game-desc-1").textContent = "Explore the dungeons and find rare treasures.";
+                document.getElementById("game-desc-2").textContent = "Fight powerful bosses with your friends.";
+                document.getElementById("game-desc-3").textContent = "Explore a vast open world filled with wonders.";
+                document.getElementById("game-desc-4").textContent = "Challenge yourself in difficult and dungeons.";
+                document.getElementById("game-title").textContent = "The Savage";
+                document.getElementById("game-info-1").textContent = "Explore vast lands, fight fierce enemies, Play the game that everyone is talking about and join the community of adventurers worldwide!";
+                document.getElementById("language-button").textContent = "เปลี่ยนเป็นภาษาไทย";
+                language = "en";
+            }
+        }
+
+        function rotateImage(event, image) {
+        const rect = image.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const deltaX = (x - centerX) / centerX;
+        const deltaY = (y - centerY) / centerY;
+        const rotationX = deltaY * -10;
+        const rotationY = -deltaX * -10;
+        image.style.transform = `rotateX(${rotationX}deg) rotateY(${rotationY}deg) scale(1.1)`;
+    }
+
+    function resetImage(image) {
+            image.style.transition = 'transform 0.15s ease';
+            image.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+        }
+    </script>
+
+</body>
+</html>
